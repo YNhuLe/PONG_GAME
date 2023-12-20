@@ -12,9 +12,11 @@ class Paddle(Turtle):
         self.goto(position)
 
     def go_up(self):
+        """method that listen to the key to control the paddle to go up"""
         new_y = self.ycor() + 50
         self.goto(self.xcor(), new_y)
 
     def go_down(self):
+        """method that listen to the key to control the paddle to go down"""
         new_y = self.ycor() - 50
         self.goto(self.xcor(), new_y)
