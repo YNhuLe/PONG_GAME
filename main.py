@@ -1,8 +1,11 @@
+import pygame
 from turtle import Turtle, Screen
 from paddle import Paddle
 from ball import Ball
 from scoreboard import Scoreboard
 import time
+
+#adding background music for the game
 
 screen = Screen()
 
@@ -23,6 +26,9 @@ screen.onkey(l_paddle.go_up, "w")
 screen.onkey(l_paddle.go_down, "s")
 
 game_is_on = True
+pygame.mixer.init()
+pygame.mixer.music.load('Puppy_Love.mp3')
+pygame.mixer.music.play(-1)
 while game_is_on:
     time.sleep(0.1)
     screen.update()
@@ -45,4 +51,6 @@ while game_is_on:
     if ball.xcor() < -380:
         ball.reset_position()
         scoreboard.r_point()
+
+pygame.mixer.music.stop()
 screen.exitonclick()
